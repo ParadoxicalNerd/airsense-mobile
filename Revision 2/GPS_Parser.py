@@ -1,6 +1,13 @@
 import re
 import json
 
+"""
+Code to parse the gps data returned by Fona module
+
+@author Pankaj Meghnai 
+@date 30 July, 2021
+"""
+
 class GPS_Parser:
     def __init__(self, string):
         regex_exp = r"CGPSINFO:([\d.]*)(?:,?)([NS]?)(?:,?)([\d.]*),([EW]?),\d*,[\d.]*,([\d.]*),([\d.]*),(\d*)"

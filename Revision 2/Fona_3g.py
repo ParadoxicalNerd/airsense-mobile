@@ -1,3 +1,10 @@
+"""
+Code to use the Fona 3G module with the Raspberry Pi
+
+@author Pankaj Meghani
+@date 30 July, 2021
+"""
+
 from GPS_Parser import GPS_Parser
 
 class FONA_3G:

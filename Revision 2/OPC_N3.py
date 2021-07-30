@@ -33,7 +33,23 @@ serial_opts = {
 
 class OPC:
     def __init__(self, serial_opts = serial_opts):
-        self.ser = serial.Serial(**serial_opts)
+        ser = self.ser = serial.Serial(**serial_opts)
+        
+        time.sleep(1)
+        ser.write(bytearray([0x5A, 0x01]))
+        nl = ser.read(3)
+        print(nl)
+        time.sleep(wait)
+        ser.write(bytearray([0x5A, 0x03]))
+        nl = ser.read(9)
+        print(nl)
+        time.sleep(wait)
+
+        # SPI conncetion
+        ser.write(bytearray([0x5A, 0x02, 0x92, 0x07]))
+        nl = ser.read(2)
+        print(nl)
+        time.sleep(wait)
 
     # Turn fan
 
